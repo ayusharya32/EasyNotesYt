@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.easycodingg.easynotesyt.ui.fragments.NotesFragment"
+        android:label="Your Notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditFragment"
+        android:name="com.easycodingg.easynotesyt.ui.fragments.AddEditNoteFragment"
+        android:label="Edit Note" >
+        <argument
+            android:name="note"
+            app:argType="com.easycodingg.easynotesyt.data.entities.Note"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
